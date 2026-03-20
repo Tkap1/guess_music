@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.video {
+	display: none;
+	margin-top: 10px;
+}
+</style>
+</head>
+<body>
+
+{}
+
+<script>
+function toggle_video(id) {
+	const element = document.getElementById(id);
+
+	if(element.style.display === "none" || element.style.display === "") {
+		element.style.display = "block";
+	}
+	else {
+		element.style.display = "none";
+	}
+}
+</script>
+
+</body>
+</html>
