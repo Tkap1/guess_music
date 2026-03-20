@@ -14,6 +14,7 @@ with open("index.html", "w", encoding="utf8") as out_file:
 	text = ""
 	for i, f in enumerate(files):
 		match = re.search(r"\[([\d\w_]+)\]\.mp3", f)
+		if i == 0: continue
 		if match and match.re.groups == 1:
 			url = match[1]
 			index = f.find(match[0])
@@ -22,11 +23,12 @@ with open("index.html", "w", encoding="utf8") as out_file:
 			<button onclick="toggle_video('{i}')">{os.path.basename(name)}</button>
 			<div id="{i}" class="video">
 			<iframe width="560" height="315"
-			src="https://www.youtu.be/{url}"
+			src="youtu.be/{url}"
 			frameborder="0" allowfullscreen>
 			</iframe>
 			</div>
 			<br>
 			"""
+			break
 
 	out_file.write(template.replace("{}", text))
