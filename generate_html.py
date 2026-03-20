@@ -12,23 +12,25 @@ with open("index.html", "w", encoding="utf8") as out_file:
 	fr.close()
 
 	text = ""
+	url_text = ""
+	count = 0
 	for i, f in enumerate(files):
 		match = re.search(r"\[([\d\w_]+)\]\.mp3", f)
-		if i == 0: continue
 		if match and match.re.groups == 1:
 			url = match[1]
 			index = f.find(match[0])
 			name = f[0:f.find(match[0])]
 			text += f"""
-			<button onclick="toggle_video('{i}')">{os.path.basename(name)}</button>
-			<div id="{i}" class="video">
-			<iframe width="560" height="315"
-			src="https://www.youtube.com/embed/{url}"
-			frameborder="0" allowfullscreen>
-			</iframe>
-			</div>
+			<button onclick="toggle_video('{count}')">{os.path.basename(name)}</button>
 			<br>
 			"""
-			break
+			if count > 0:
+				url_text += ", "
+			url_text += f"'{url}'"
 
-	out_file.write(template.replace("{}", text))
+			count += 1
+			if count > 5: break
+
+	final_text = template.replace("{1}", text)
+	final_text = final_text.replace("{2}", f"const url_arr = [{url_text}]")
+	out_file.write(final_text)

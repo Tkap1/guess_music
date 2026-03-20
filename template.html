@@ -10,18 +10,23 @@
 </head>
 <body>
 
-{}
+<div id="buttons"></div>
+{1}
+
+<div id="player" class="video">
+<iframe width="560" height="315" style="position: fixed; right: 0; top: 0;"
+src="https://www.youtube.com/embed/pb5T_FFpCN4"
+frameborder="0" allowfullscreen>
+</iframe>
+</div>
+
 
 <script>
+{2}
 function toggle_video(id) {
-	const element = document.getElementById(id);
-
-	if(element.style.display === "none" || element.style.display === "") {
-		element.style.display = "block";
-	}
-	else {
-		element.style.display = "none";
-	}
+	const element = document.getElementById("player");
+	const iframe = element.querySelector("iframe");
+	iframe.src = "https://www.youtube.com/embed/" + url_arr[Number(id)];
 }
 </script>
 

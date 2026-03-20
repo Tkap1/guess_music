@@ -10,27 +10,41 @@
 </head>
 <body>
 
+<div id="buttons"></div>
 
+			<button onclick="toggle_video('0')">02 - Amusement - Tree Of Savior OST - BGM - Soundtrack </button>
+			<br>
+			
 			<button onclick="toggle_video('1')">06 - Encounter </button>
-			<div id="1" class="video">
-			<iframe width="560" height="315"
-			src="https://www.youtube.com/embed/R5rN13PvzgU"
-			frameborder="0" allowfullscreen>
-			</iframe>
-			</div>
+			<br>
+			
+			<button onclick="toggle_video('2')">079. Your Best Nightmare (UNDERTALE Soundtrack) - Toby Fox </button>
+			<br>
+			
+			<button onclick="toggle_video('3')">08 - Mr. Longbottom Flies - Harry Potter and The Sorcerer's Stone Soundtrack </button>
+			<br>
+			
+			<button onclick="toggle_video('4')">11. Unasked Advice ⧸ Hunter x Hunter Phantom Rouge Original Soundtrack </button>
+			<br>
+			
+			<button onclick="toggle_video('5')">12 Escalation </button>
 			<br>
 			
 
-<script>
-function toggle_video(id) {
-	const element = document.getElementById(id);
+<div id="player" class="video">
+<iframe width="560" height="315" style="position: fixed; right: 0; top: 0;"
+src="https://www.youtube.com/embed/pb5T_FFpCN4"
+frameborder="0" allowfullscreen>
+</iframe>
+</div>
 
-	if(element.style.display === "none" || element.style.display === "") {
-		element.style.display = "block";
-	}
-	else {
-		element.style.display = "none";
-	}
+
+<script>
+const url_arr = ['eQo4UDxHQbY', 'R5rN13PvzgU', 'DxxLzJDARbo', 'lBubFNHByD8', 's0S2kIqRsIE', 'fUoDgYkhG84']
+function toggle_video(id) {
+	const element = document.getElementById("player");
+	const iframe = element.querySelector("iframe");
+	iframe.src = "https://www.youtube.com/embed/" + url_arr[Number(id)];
 }
 </script>
 
