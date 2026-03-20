@@ -23,7 +23,7 @@ with open("index.html", "w", encoding="utf8") as out_file:
 			<button onclick="toggle_video('{i}')">{os.path.basename(name)}</button>
 			<div id="{i}" class="video">
 			<iframe width="560" height="315"
-			src="youtu.be/{url}"
+			src="https://www.youtube.com/embed/{url}"
 			frameborder="0" allowfullscreen>
 			</iframe>
 			</div>
