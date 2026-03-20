@@ -29,6 +29,7 @@ data = [
 	{ "file": "Woodkid - Guns for Hire ｜ Arcane League of Legends ｜ Riot Games Music [pKNEx-9OqRM]", },
 	{ "file": "Pokémon Red, Blue & Yellow - Champion Battle Music (HQ) [nXgAj5KdAC0]", "tags": ["pokemon"], },
 	{ "file": "Bea Miller - Playground  ｜ Arcane League of Legends ｜ Riot Games Music [3jfI-z__GY0]", },
+	{ "file": "XI - Freedom Dive ↓ [OI3C9qQlb1U]", },
 ]
 
 

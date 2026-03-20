@@ -16,7 +16,7 @@ with open("index.html", "w", encoding="utf8") as out_file:
 	count = 0
 	for i, f in enumerate(files):
 		f = f.replace("\\", "/")
-		match = re.search(r"\[([\d\w_]+)\]\.mp3", f)
+		match = re.search(r"\[([\d\w_\-]+)\]\.mp3", f)
 		if match and match.re.groups == 1:
 			url = match[1]
 			index = f.find(match[0])
