@@ -14,7 +14,7 @@
 
 <div id="player" class="video">
 <iframe width="560" height="315" style="position: fixed; right: 0; top: 0;"
-src="https://www.youtube.com/embed/pb5T_FFpCN4"
+src=""
 frameborder="0" allowfullscreen>
 </iframe>
 </div>
@@ -22,10 +22,12 @@ frameborder="0" allowfullscreen>
 
 <script>
 {2}
-function toggle_video(id) {
+function toggle_video(button, id) {
 	const element = document.getElementById("player");
 	const iframe = element.querySelector("iframe");
 	iframe.src = "https://www.youtube.com/embed/" + url_arr[Number(id)];
+
+	navigator.clipboard.writeText(`{ "file": "${button.innerText} [${url_arr[id]}]", },`);
 }
 </script>
 
